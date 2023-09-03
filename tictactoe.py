@@ -1,4 +1,4 @@
-import os, ast, matplotlib.pyplot as plt
+import os, ast#, matplotlib.pyplot as plt
 import copy, random
 
 class TicTacToe:
@@ -156,13 +156,13 @@ class TicTacToe:
     
     def user_input(self) -> None:
         # waits for user to make a valid input
-        xpos = input("\nX (row) position: ")
-        ypos = input("Y (col) position: ")
+        xpos = input("\nRow: ")
+        ypos = input("Col: ")
 
         while not (0 <= int(xpos) <= 2 and 0 <= int(ypos) <= 2) or self.state[int(xpos)][int(ypos)] != " ":
             print("Invalid input, try agian!")
-            xpos = input("X (row) position: ")
-            ypos = input("Y (col) position: ")
+            xpos = input("Row: ")
+            ypos = input("Col: ")
 
         self.state[int(xpos)][int(ypos)] = "x"
         self.printboard()
@@ -203,7 +203,7 @@ class TicTacToe:
             
 
 if __name__ == "__main__":
-    tik = TikTackToe()
+    tik = TicTacToe()
 
     tik.printboard()
     while not tik.terminated():
